@@ -1,0 +1,90 @@
+.touch-slider {
+
+  $debug: false;
+  $slider-padding: 20px;
+
+  @if $debug {
+    outline: 1px solid red;
+    // background: red;
+  }
+
+  position: relative; /* required for child div to have left position values */
+  overflow: hidden; /* needed to clip child div */
+  // margin-left: -$slider-padding; /* so it lines up with html elements outside of .touch-slider */
+  // margin-right: $slider-padding;
+  // padding-right: $slider-padding;
+
+  & > div {
+
+    @if $debug {
+      outline: 1px solid green;
+      // background: green;
+    }
+
+    position: relative;
+    left: 0;
+    white-space: nowrap;
+    display: inline-block;
+    // margin: 0 $slider-padding;
+    // margin-left: $slider-padding;
+
+    &.animate {
+      $duration: 200ms;
+      $easing: cubic-bezier(0.19, 1, 0.22, 1);  // ease-out-cubic
+      -webkit-transition: left $duration $easing;
+         -moz-transition: left $duration $easing;
+           -o-transition: left $duration $easing;
+              transition: left $duration $easing;
+
+    }
+
+  }
+
+  .card {
+
+    @if $debug {
+      // outline: 1px solid grey;
+    }
+
+    $card-width: 248px;
+    $card-height: 288px;
+    $card-inner-padding: 10px;
+    $card-outer-margin: 10px; /* the space in-between cards */
+
+    $shadow-size: 2px; /* Not using a drop shadow? Set to "0", no units */
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+
+    background-color: white;
+    display: inline-block;
+    width: $card-width;
+    height: $card-height;
+    overflow: hidden; /* clip content instead of 'auto' */
+    padding: $card-inner-padding;
+
+    @if $shadow-size {
+      $shadow-color: rgba(51,51,51,0.2);
+      margin: $shadow-size;
+      -webkit-box-shadow: 0 0 $shadow-size 0 $shadow-color;
+         -moz-box-shadow: 0 0 $shadow-size 0 $shadow-color;
+              box-shadow: 0 0 $shadow-size 0 $shadow-color;
+    }
+
+    &:not(:last-child){
+      margin-right: $card-outer-margin;
+    }
+
+    /* 
+      Get rid of extra whitespace in elements like headings
+      so the top of the content lines up inside card:
+    */
+    *:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+  }
+
+}
