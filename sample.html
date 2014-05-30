@@ -1,0 +1,81 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Frogger - Touch Slider - Sample</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/frg-touch-slider.css">
+  <style>
+  body {
+    background: #eee;
+    padding: 0;
+    margin: 0;
+  }
+  .grid {
+    /* note: not full bleed.... */
+    padding: 10px 20px;
+    
+    /* note: fake full bleed.... */
+    /*padding: 10px 0 10px 40px;*/
+  }
+  .has-bg-image {
+    background-image: url(img/248x288.gif);
+    background-repeat: no-repeat;
+  }
+  </style>
+</head>
+<body>
+
+  <div class="grid">
+
+    <h2>Touch Slider</h2>
+
+    <div class="touch-slider">
+     <div>
+      
+        <div class="card has-bg-image">
+          <h1>Card 1</h1>
+          <p>Image is a background image</p>
+        </div>
+
+        <div class="card">
+          <h1>Card 2</h1>
+          <p>This card just has HTML markup.</p>
+          <h2>Just text</h2>
+          <p>Nothing too crazy.</p>
+          <h3>Styling</h3>
+          <p>Style using your own CSS</p>
+        </div>
+
+        <div class="card">
+          <h1>Card 3</h1>
+          <p>This card just has HTML markup.</p>
+          <h2>Just text</h2>
+          <p>Nothing too crazy.</p>
+          <h3>Styling</h3>
+          <p>Style using your own CSS</p>
+        </div>
+
+        <div class="card">
+          <h1>Card 4</h1>
+          <img src="img/228x200.gif">
+        </div>
+
+      </div>
+    </div> <!-- end .touch-slider -->
+
+  </div> 
+  <!-- end .grid -->
+
+  <script src="js/jquery-1.11.1.min.js"></script>
+  <script src="js/hammer.min.js"></script>
+  <script src="js/frg-touch-slider.js"></script>
+  <script>
+    $(document).ready(function(){
+      FroggerTouchSlider.init('.touch-slider');
+    });
+  </script>
+
+</body>
+</html>
